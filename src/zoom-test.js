@@ -18,13 +18,13 @@ function getZoomMock(opts) {
 test('should have 1 zoom_wrapper node', t => {
     const zoom = getZoomMock();
 
-    t.true(zoom.find('.zoom_wrapper').length === 1);
+    t.is(zoom.find('.zoom_wrapper').length, 1);
 });
 
 test('should have 1 zoom_modal node', t => {
     const zoom = getZoomMock();
 
-    t.true(zoom.find('.zoom_modal').length === 1);
+    t.is(zoom.find('.zoom_modal').length, 1);
 });
 
 test('should contain "MODAL_CONTENT"', t => {
