@@ -69,6 +69,10 @@ and
 
 to start a dev server on `localhost:8080`
 
+to run tests just use
+
+`$ npm test`
+
 Warnings
 --------
 This component should not not be considered ready for production (until it will reach 1.0.0),
