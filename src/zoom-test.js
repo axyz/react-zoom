@@ -11,7 +11,9 @@ function getZoomMock(opts) {
     const options = Object.assign({}, defaultOpts, opts);
 
     return shallow(
-        React.createElement(Zoom, options.props, options.children)
+        <Zoom {...options.props}>
+            {options.children}
+        </Zoom>
     );
 }
 
