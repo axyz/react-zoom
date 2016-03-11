@@ -1,11 +1,12 @@
 {
   "name": "react-zoom",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Lightweight and stateless modal component for React.js",
   "main": "dist/react-zoom.js",
   "scripts": {
     "test": "./node_modules/.bin/ava",
-    "test:watch": "./node_modules/.bin/ava --watch"
+    "test:watch": "./node_modules/.bin/ava --watch",
+    "prepublish": "NODE_ENV=production ./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
