@@ -21,10 +21,12 @@ class Zoom extends Component {
             width,
             height,
             isVisible,
-            children
+            children,
+            zIndex
         } = this.props;
 
         const wrapperStyle = {
+            zIndex: zIndex,
             position: 'fixed',
             display: isVisible ? 'flex' : 'none',
             top: 0,
@@ -62,7 +64,8 @@ Zoom.propTypes = {
     offset: PropTypes.shape({
         x: PropTypes.string,
         y: PropTypes.string
-    })
+    }),
+    zIndex: PropTypes.number
 };
 
 Zoom.defaultProps = {
@@ -74,7 +77,8 @@ Zoom.defaultProps = {
     offset: {
         x: '0',
         y: '0'
-    }
+    },
+    zIndex: 1
 };
 
 export default Zoom;
