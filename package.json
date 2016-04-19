@@ -1,6 +1,6 @@
 {
   "name": "react-zoom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight and stateless modal component for React.js",
   "main": "dist/react-zoom.js",
   "scripts": {
