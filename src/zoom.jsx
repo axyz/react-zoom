@@ -39,6 +39,7 @@ class Zoom extends Component {
 
         const modalStyle = {
             position: 'relative',
+            overflow: 'auto',
             left: offset.x,
             top: offset.y,
             width,
