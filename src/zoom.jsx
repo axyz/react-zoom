@@ -76,8 +76,8 @@ Zoom.defaultProps = {
     hAlign: 'center',
     vAlign: 'center',
     offset: {
-        x: '0',
-        y: '0'
+        x: 0,
+        y: 0
     },
     zIndex: 1
 };
