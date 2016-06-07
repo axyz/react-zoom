@@ -63,8 +63,8 @@ Zoom.propTypes = {
     hAlign: PropTypes.oneOf(['left', 'center', 'right']),
     vAlign: PropTypes.oneOf(['top', 'center', 'bottom']),
     offset: PropTypes.shape({
-        x: PropTypes.string,
-        y: PropTypes.string
+        x: PropTypes.number,
+        y: PropTypes.number
     }),
     zIndex: PropTypes.number
 };
