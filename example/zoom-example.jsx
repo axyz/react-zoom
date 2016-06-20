@@ -5,15 +5,27 @@ import * as actions from './action-creators';
 
 class ZoomExample extends Component {
     render() {
-        return(
+        const overlay = <div style={{
+            backgroundColor: 'blue',
+            position: 'fixed',
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 99,
+        }} />;
+
+        return (
             <div>
                 <button onClick={() => this.props.dispatch(actions.show())}>
                     SHOW
                 </button>
                 <Zoom
-                  isVisible={this.props.isModalVisible}
-                  width="50%"
-                  height="50%"
+                    isVisible={this.props.isModalVisible}
+                    width="50%"
+                    height="50%"
+                    overlay={overlay}
+                    zIndex={999}
                 >
                     <button onClick={() => this.props.dispatch(actions.hide())}>
                         HIDE

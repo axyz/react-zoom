@@ -22,19 +22,20 @@ class Zoom extends Component {
             height,
             isVisible,
             children,
-            zIndex
+            zIndex,
+            overlay,
         } = this.props;
 
         const wrapperStyle = {
             zIndex: zIndex,
-            position: 'fixed',
-            display: isVisible ? 'flex' : 'none',
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            justifyContent: _justify[hAlign],
-            alignItems: _align[vAlign]
+            position: ' absolute',
+            display: isVisible ? 'block' : 'none',
+            top: vAlign === 'top' ? 0 : vAlign === 'bottom' ? 'initial' : `calc((100% - ${height}) / 2)`,
+            left: hAlign === 'left' ? 0 : hAlign === 'right' ? 'initial' : `calc((100% - ${width}) / 2)`,
+            bottom: vAlign === 'bottom' ? 0 : 'initial',
+            right: hAlign === 'right' ? 0 : 'initial',
+            width,
+            height,
         };
 
         const modalStyle = {
@@ -42,12 +43,14 @@ class Zoom extends Component {
             overflow: 'auto',
             left: offset.x,
             top: offset.y,
-            width,
-            height
+            width: '100%',
+            height: '100%',
+            zIndex,
         };
 
         return (
             <div className="zoom_wrapper" style={wrapperStyle}>
+                {overlay && overlay}
                 <div className="zoom_modal" style={modalStyle}>
                     {children}
                 </div>

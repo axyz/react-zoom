@@ -41,6 +41,7 @@ ReactDOM.render(
                 y: '5%' // vertical offset in css format (default to "0")
             }}
             zIndex={99} // zIndex for the modal (default to 1)
+            overlay={someNode} // jsx node element to create a background overlay
         >
 
             ... // content of the modal
