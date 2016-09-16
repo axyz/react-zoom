@@ -33,7 +33,9 @@ ReactDOM.render(
         <Zoom
             isVisible={true} // show or hide the modal (default to false)
             width="50%" // width of the modal in css format (default to "100%")
+            maxWidth="200px"
             height="50%" // height of the modal in css format (default to "100%")
+            maxHeight="50%"
             hAlign="center" // horizontal alignment ["left", "center", "right"] (default to "center")
             vAlign="center" // vertical alignment ["top", "center", "bottom"] (default to "center")
             offset={{ // offset from the current layout position

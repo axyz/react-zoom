@@ -19,6 +19,8 @@ class Zoom extends Component {
             hAlign,
             offset,
             width,
+            maxWidth,
+            maxHeight,
             height,
             isVisible,
             children,
@@ -45,10 +47,12 @@ class Zoom extends Component {
             overflow: 'auto',
             marginLeft: hAlign === 'left' ? 0 : 'auto',
             marginRight: hAlign === 'right' ? 0 : 'auto',
-            top: offset.y + 'px',
-            left: offset.x + 'px',
+            top: offset.y,
+            left: offset.x,
             width,
+            maxWidth,
             height,
+            maxHeight,
             zIndex,
 
         };
@@ -69,7 +73,9 @@ class Zoom extends Component {
 Zoom.propTypes = {
     isVisible: PropTypes.bool,
     width: PropTypes.string,
+    maxWidth: PropTypes.string,
     height: PropTypes.string,
+    maxHeight: PropTypes.string,
     hAlign: PropTypes.oneOf(['left', 'center', 'right']),
     vAlign: PropTypes.oneOf(['top', 'center', 'bottom']),
     offset: PropTypes.shape({
@@ -82,7 +88,9 @@ Zoom.propTypes = {
 Zoom.defaultProps = {
     isVisible: false,
     width: 'auto',
+    maxWidth: 'none',
     height: 'auto',
+    maxHeight: 'none',
     hAlign: 'center',
     vAlign: 'center',
     offset: {
