@@ -29,30 +29,37 @@ class Zoom extends Component {
         const wrapperStyle = {
             zIndex: zIndex,
             position: 'fixed',
-            display: isVisible ? 'block' : 'none',
-            top: vAlign === 'top' ? 0 : vAlign === 'bottom' ? 'initial' : `calc((100% - ${height}) / 2)`,
-            left: hAlign === 'left' ? 0 : hAlign === 'right' ? 'initial' : `calc((100% - ${width}) / 2)`,
-            bottom: vAlign === 'bottom' ? 0 : 'initial',
-            right: hAlign === 'right' ? 0 : 'initial',
-            width,
-            height,
+            height: '100%',
+            width: '100%',
+            top: 0,
+            display: isVisible ? 'table' : 'none',
+        };
+
+        const tableCellStyle = {
+            display: 'table-cell',
+            verticalAlign: vAlign === 'top' ? 'top' : vAlign === 'bottom' ? 'bottom' : 'middle',
         };
 
         const modalStyle = {
             position: 'relative',
             overflow: 'auto',
-            left: offset.x,
-            top: offset.y,
-            width: '100%',
-            height: '100%',
+            marginLeft: hAlign === 'left' ? 0 : 'auto',
+            marginRight: hAlign === 'right' ? 0 : 'auto',
+            top: offset.y + 'px',
+            left: offset.x + 'px',
+            width,
+            height,
             zIndex,
+
         };
 
         return (
             <div className="zoom_wrapper" style={wrapperStyle}>
                 {overlay && overlay}
+                <div style={tableCellStyle}>
                 <div className="zoom_modal" style={modalStyle}>
                     {children}
+                </div>
                 </div>
             </div>
         );
@@ -67,15 +74,15 @@ Zoom.propTypes = {
     vAlign: PropTypes.oneOf(['top', 'center', 'bottom']),
     offset: PropTypes.shape({
         x: PropTypes.number,
-        y: PropTypes.number
+        y: PropTypes.number,
     }),
-    zIndex: PropTypes.number
+    zIndex: PropTypes.number,
 };
 
 Zoom.defaultProps = {
     isVisible: false,
-    width: '100%',
-    height: '100%',
+    width: 'auto',
+    height: 'auto',
     hAlign: 'center',
     vAlign: 'center',
     offset: {

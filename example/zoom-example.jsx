@@ -23,7 +23,7 @@ class ZoomExample extends Component {
                 <Zoom
                     isVisible={this.props.isModalVisible}
                     width="50%"
-                    height="50%"
+                    height="auto"
                     overlay={overlay}
                     zIndex={999}
                 >
