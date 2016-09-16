@@ -34,6 +34,7 @@ class Zoom extends Component {
             height: '100%',
             width: '100%',
             top: 0,
+            left: 0,
             display: isVisible ? 'table' : 'none',
         };
 
